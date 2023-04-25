@@ -1,0 +1,39 @@
+<div class="container mt-3">
+    <div class="todos">
+        <h3>
+            To Do List
+        </h3>
+        <div class="input">
+            <input type="text" [(ngModel)]="todoText" placeholder="Tapşırığı daxil edin" />
+            <button [disabled]="!todoText" (click)="addList(todoText)">+</button>
+        </div>
+
+        <ul *ngIf="todos.length > 0">
+            <li *ngFor="let todo of todos; let i = index">
+                <div class="texts">
+                    <p class="num">{{i+1}}</p>
+                    <p class="desc">{{todo.description}}</p>
+                </div>
+                <div class="buttons">
+                    <a [routerLink]="['/edit',todo.id]">
+                        <ng-icon class="edit" name="heroPencil"></ng-icon>
+                    </a>
+                    <ng-icon class="del" (click)="deleteList(todo.id)" name="heroTrash"></ng-icon>
+                </div>
+            </li>
+        </ul>
+
+        <div class="noList" *ngIf="todos.length === 0">
+            <img src="../../../assets/images/group.png" alt="err">
+            <p>Heç bir tapşırıq yoxdur.</p>
+        </div>
+
+        <div class="end">
+            <div class="text">
+                <p>Ümumi: {{todos.length}} tapşırıq</p>
+            </div>
+            <p class="alldelete" (click)="deleteAll()">Hamısını sil</p>
+        </div>
+
+    </div>
+</div>

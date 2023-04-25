@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  <div class="todos">
+    <div class="title">
+      <h3>Edit</h3>
+    </div>
+    <div class="input">
+      <input
+        type="text"
+        [(ngModel)]="formdata.description"
+        name="first"
+        placeholder="Tapşırığı daxil edin"
+      />
+    </div>
+    <button type="button" (click)="updateList()" class="btn btn-primary">
+      Update
+    </button>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+nav{
+    background-color: rgba(0,0,0,0.2);
+    a{
+        color: #808000;
+    }
+    .navbar-collapse{
+        flex-grow: 0;
+    }
+    .active{
+        border-bottom: 1px solid black;
+    }
+}
